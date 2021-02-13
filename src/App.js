@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Icon from './components/icons';
+import Navbar from './components/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Card, CardBody, Container, Row, Col, Button } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
-function App() {
+const itemArray = new Array(9).fill("empty");
+
+
+const App = () => {
+
+  const [isCross, setIsCross] = useState('false');
+  const [winMessage, setWinMessge] = useState('');
+
+  const reloadGame = () => {
+    // itemArray.fill('empty')
+  };
+
+  const checkIsWinner = () => {
+    // if ()
+  };
+
+  const changeItem = () => {
+    // 
+  };
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="p-5">
+      <ToastContainer position="bottom-center" />
+      <Row>
+        <Col md={6} className="offset-md-6">
+          <div className="grid">
+            {itemArray.map((item, index) => (
+              <Card>
+                <CardBody className="Box">
+                  <Icon name={item} />
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

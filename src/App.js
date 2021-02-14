@@ -33,7 +33,7 @@ const App = () => {
     <Container className="p-5">
       <ToastContainer position="bottom-center" />
       <Row>
-        <Col md={6} className="offset-md-6">
+        <Col md={6} className="offset-md-3">
           <div className="grid">
             {itemArray.map((item, index) => (
               <Card>

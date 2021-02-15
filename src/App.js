@@ -22,8 +22,44 @@ const App = () => {
   };
 
   const checkIsWinner = () => {
-    // if ()
+    if (itemArray[0] === itemArray[1] &&
+      itemArray[0] === itemArray[2] &&
+      itemArray[0] !== "empty") {
+      setWinMessge(`${itemArray[0]} Wins`)
+    }
+    else if (itemArray[3] === itemArray[4] &&
+      itemArray[3] === itemArray[5] &&
+      itemArray[3] !== "empty"
+    ) setWinMessge(`${itemArray[3]} Wins`)
+
+    else if (itemArray[6] === itemArray[7] &&
+      itemArray[6] === itemArray[8] &&
+      itemArray[6] !== "empty"
+    ) setWinMessge(`${itemArray[6]} Wins`)
+    else if (itemArray[0] === itemArray[3] &&
+      itemArray[0] === itemArray[6] &&
+      itemArray[0] !== "empty"
+    ) setWinMessge(`${itemArray[0]} Wins`)
+    else if (itemArray[1] === itemArray[4] &&
+      itemArray[1] === itemArray[7] &&
+      itemArray[1] !== "empty"
+    ) setWinMessge(`${itemArray[1]} Wins`)
+    else if (itemArray[2] === itemArray[5] &&
+      itemArray[2] === itemArray[8] &&
+      itemArray[2] !== "empty"
+    ) setWinMessge(`${itemArray[2]} Wins`)
+    else if (itemArray[0] === itemArray[4] &&
+      itemArray[0] === itemArray[8] &&
+      itemArray[0] !== "empty"
+    ) setWinMessge(`${itemArray[0]} Wins`)
+    else if (itemArray[2] === itemArray[4] &&
+      itemArray[2] === itemArray[6] &&
+      itemArray[2] !== "empty"
+    ) setWinMessge(`${itemArray[2]} Wins`)
+
+
   };
+
 
   const changeItem = itemNumber => {
     if (winMessage) {
@@ -51,7 +87,7 @@ const App = () => {
           {winMessage ? (
             <div className="mb-2 mt-2">
               <h2 className="text-success text-uppercase text-center" >{winMessage}</h2>
-              <Button className="success" block onClick={reloadGame} >Reload the Game</Button>
+              <Button className="btn-info " block onClick={reloadGame} >Reload the Game</Button>
             </div>
           ) : (
               <h2 className="text-center text-warning text-uppercase mt-2 mb-2">

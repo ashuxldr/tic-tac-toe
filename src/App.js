@@ -7,7 +7,7 @@ import { Card, CardBody, Container, Row, Col, Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-const itemArray = new Array(9).fill("empty");
+const itemArray = new Array(9).fill("full");
 
 
 const App = () => {
@@ -90,10 +90,10 @@ const App = () => {
               <Button className="btn-info " block onClick={reloadGame} >Reload the Game</Button>
             </div>
           ) : (
-              <h2 className="text-center text-warning text-uppercase mt-2 mb-2">
-                {isCross ? "Cross" : "Circle"} turns
-              </h2>
-            )}
+            <h2 className="text-center text-warning text-uppercase mt-2 mb-2">
+              {isCross ? "Cross" : "Circle"} turns
+            </h2>
+          )}
           <div className="grid">
             {itemArray.map((item, index) => (
               <Card color="warning" onClick={() => changeItem(index)}>
